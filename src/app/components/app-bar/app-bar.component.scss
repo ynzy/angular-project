@@ -1,0 +1,31 @@
+.bar-warp {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background: #4152af;
+  box-shadow: 0 0 20px #060606;
+  font-size: 20px;
+  color: #fff;
+  .logo {
+    margin-right: 60px;
+    font-weight: bold;
+  }
+  a {
+    color: #fff;
+    width: 80px;
+    text-align: center;
+    &:hover {
+      color: #060606;
+    }
+  }
+  .active {
+    color: #060606;
+  }
+  .badge {
+    font-size: 20px;
+    padding-right: 5px;
+  }
+}
