@@ -1,9 +1,9 @@
 <div class="detail-warp">
   <h1>新大陆</h1>
-  <div class="detail-list" style="background: #ECECEC;padding:30px;">
+  <div class="detail-list" >
     <div *ngFor="let item of list" style="margin: 10px">
       <nz-card class="position-item" style="width:300px;" 
-      [nzExtra]="new" [nzBordered]="false" [nzTitle]="item.name"
+      [nzExtra]="new"  [nzTitle]="item.name"
         [nzExtra]="extraTemplate">
         <p>{{item.date}}</p>
         <p>{{item.desc}}</p>
