@@ -1,1 +1,18 @@
-<p>new-map works!</p>
+<div class="detail-warp">
+  <h1>新大陆</h1>
+  <div class="detail-list" style="background: #ECECEC;padding:30px;">
+    <div *ngFor="let item of list" style="margin: 10px">
+      <nz-card class="position-item" style="width:300px;" 
+      [nzExtra]="new" [nzBordered]="false" [nzTitle]="item.name"
+        [nzExtra]="extraTemplate">
+        <p>{{item.date}}</p>
+        <p>{{item.desc}}</p>
+        <p class="price">预算：{{item.price}}</p>
+      </nz-card>
+      <ng-template #new >
+        <strong *ngIf="!item.hasDone" class="card-new">新</strong>
+      </ng-template>
+    </div>
+  </div>
+
+</div>
