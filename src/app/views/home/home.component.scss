@@ -1,0 +1,27 @@
+.home-warp {
+  display: flex;
+  .content-list {
+    width: 400px;
+    min-height: 600px;
+    margin-right: 20px;
+    .content-item {
+      margin-bottom: 40px;
+      .item-title {
+        font-size: 18px;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px dashed #ccc;
+      }
+    }
+    .visit-list {
+      
+      .list-button {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .map-warp {
+    flex: 1;
+  }
+}
