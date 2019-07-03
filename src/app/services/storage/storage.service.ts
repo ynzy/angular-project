@@ -10,7 +10,6 @@ export class StorageService {
     localStorage.setItem(key,JSON.stringify(value));
   }
   get(key:string) {
-    // return 'this is a service'
     return JSON.parse(localStorage.getItem(key));
   }
   remove(key:string) {

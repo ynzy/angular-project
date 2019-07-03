@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { StorageService } from "../storage/storage.service";
+import { NzMessageService } from 'ng-zorro-antd';
 /**
  * 访问列表，添加旅游清单，清除清单功能
  *
@@ -58,7 +59,8 @@ export class LocationService {
     }
   ];
   constructor(private http:HttpClient,
-    private storage:StorageService
+    private storage:StorageService,
+    private message:NzMessageService
     ) { 
       if(storage.get('list')) {
         this.items = storage.get('list')
@@ -72,8 +74,8 @@ export class LocationService {
     addToList(data) {
       // console.log(data)
       this.items.push(data);
-      console.log(this.items)
       this.storage.set('list',this.items)
+      this.message.success('添加成功');
     }
 
     clearList() {

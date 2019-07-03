@@ -21,8 +21,6 @@ window['cb'] = function(data) {
 export class HomeComponent implements OnInit {
   hasDoneList;
   validateForm: FormGroup;
-
-
   constructor(private fb: FormBuilder,
     private location:LocationService,
     private request:RequestService,
@@ -30,7 +28,6 @@ export class HomeComponent implements OnInit {
     private message:NzMessageService
     ) {
       this.hasDoneList = this.location.getItems().filter(item => {
-        // console.log(item)
         return item.hasDone && item
       });
       this.validateForm = this.fb.group({
@@ -47,7 +44,6 @@ export class HomeComponent implements OnInit {
     map.centerAndZoom(new BMap.Point(118.454, 32.955), 6);  // 创建点坐标  
     map.enableScrollWheelZoom();
     let points = [];
-
     this.location.getItems().forEach(item => 
       // && 只要&&前面为true，无论&&后面是true还是false，结果都返回&&后面的值
       item.hasDone &&  points.push(new BMap.Point(item.location.lng,item.location.lat))
@@ -68,14 +64,11 @@ export class HomeComponent implements OnInit {
       this.validateForm.controls[i].markAsDirty();
       this.validateForm.controls[i].updateValueAndValidity();
     }
-    // console.log(this.validateForm.value);
     let currentData = this.validateForm.value; //重新赋值
     let date = new Date(currentData.date);
     currentData.date = date.getTime();
-    // console.log(this.validateForm.value);
     this.searchLocation(currentData.name).then(res => {
       if(!locationData.length) {
-        // console.log(locationData)
         this.message.error('没有找到这个城市');
         return false
       }
