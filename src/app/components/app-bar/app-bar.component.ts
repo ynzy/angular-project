@@ -9,11 +9,12 @@ export class AppBarComponent implements OnInit {
   items;
 
   constructor(private location:LocationService) {
-    this.items = this.location.getItems().filter(data => {
-      // console.log(data)
-      return !data.hasDone && data
-    })
-    console.log(this.items)
+    this.items = this.location.getItems()
+    // .filter(data => {
+    //   // console.log(data)
+    //   return !data.hasDone && data
+    // })
+    // console.log(this.items)
    }
 
   ngOnInit() {

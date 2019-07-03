@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LocationService } from "../../services/location/location.service";
 import { RequestService } from "../../services/request/request.service";
 import { HttpClient } from "@angular/common/http";
+import { NzMessageService } from 'ng-zorro-antd';
+
 declare var BMap: any;
 declare var BMapLib: any;
 
@@ -24,10 +26,11 @@ export class HomeComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private location:LocationService,
     private request:RequestService,
-    private http:HttpClient
+    private http:HttpClient,
+    private message:NzMessageService
     ) {
       this.hasDoneList = this.location.getItems().filter(item => {
-        console.log(item)
+        // console.log(item)
         return item.hasDone && item
       });
       this.validateForm = this.fb.group({
@@ -71,16 +74,21 @@ export class HomeComponent implements OnInit {
     currentData.date = date.getTime();
     // console.log(this.validateForm.value);
     this.searchLocation(currentData.name).then(res => {
-      // console.log(locationData[0].location)
+      if(!locationData.length) {
+        // console.log(locationData)
+        this.message.error('没有找到这个城市');
+        return false
+      }
       this.location.addToList({
         ...currentData,
         location: locationData[0].location,
         desc: '计划中...',
         hasDone: false
       })
+      
     });
-
     this.validateForm.reset();
+    
   }
   resetForm(e: MouseEvent): void {
     e.preventDefault();
