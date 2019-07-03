@@ -1,7 +1,7 @@
 <div class="bar-warp">
   <div class="logo">旅游导图</div>
   <a [routerLink]="[ '/home' ]" routerLinkActive="active">首页</a>
-  <nz-badge [nzCount]="5" class="badge">
+  <nz-badge [nzCount]="items.length" class="badge">
       <a [routerLink]="[ '/newmap' ]" routerLinkActive="active">我的大陆</a>
   </nz-badge>
 </div>

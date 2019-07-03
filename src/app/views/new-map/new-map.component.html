@@ -5,7 +5,7 @@
       <nz-card class="position-item" style="width:300px;" 
       [nzExtra]="new"  [nzTitle]="item.name"
         [nzExtra]="extraTemplate">
-        <p>{{item.date}}</p>
+        <p>{{item.date | date:'yyyy-MM-dd'}}</p>
         <p>{{item.desc}}</p>
         <p class="price">预算：{{item.price}}</p>
       </nz-card>

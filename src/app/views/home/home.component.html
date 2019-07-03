@@ -6,7 +6,7 @@
       <div class="visit-list">
         <div nz-row>
           <div class="list-button" nz-col nzSpan="6" *ngFor="let item of hasDoneList">
-            <button nz-button nz-popover nzType="primary" nzContent="item.desc" nzPlacement="bottom">
+            <button nz-button nz-popover nzType="primary" [nzContent]="item.desc" nzPlacement="bottom">
               {{item.name}}
             </button>
           </div>
