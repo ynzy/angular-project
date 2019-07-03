@@ -6,6 +6,10 @@
 * 解决调用百度地图API时的跨域问题
 * 对localStorage进行基础封装，进行数据持久化
 * Ant Design UI的使用，[官网](https://ng.ant.design/docs/introduce/zh)
+![首页.png](https://upload-images.jianshu.io/upload_images/13505073-16af789cd2a5d344.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![我的大陆.png](https://upload-images.jianshu.io/upload_images/13505073-06757a349a56296a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+## 项目简介
+一个想法，可以有这样一个程序，记录自己的路途，见闻和感想。项目的首页展示的是已去过的旅游地点和路线，地图路线是通过调用百度地图api实现的，当然提供这样的api很多，大家可以根据自己的喜好去使用。其次我们可以在首页添加未来的旅游规划和预算，方便后面使用。我的大陆页面主要展示的你去过的和即将要去的路线，可以进行相关操作。
 
 ## 功能实现
 1. 项目首页展示已经去过的旅游地点和路线，地图路线由百度api实现。
@@ -564,3 +568,5 @@ src/app/home/index.ts(47,23): error TS2304: Cannot find name 'BMapLib'.
 declare var BMap: any;
 declare var BMapLib: any;
 ```
+## 参考：
+[使用Angular8和百度地图api开发《旅游清单》](https://juejin.im/post/5d0dd545f265da1bd42488f5#heading-5)
